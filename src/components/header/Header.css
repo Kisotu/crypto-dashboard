@@ -1,0 +1,29 @@
+.nav-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(3, 14, 14);
+    /* border-radius: 5px; */
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 8px;
+}
+.brand-text{
+    color: white;
+    font-size: 24px;
+    font-style: italic;
+    margin-left: 10px;
+}
+.search-button{
+    background-color: #4CAF50;
+    text-decoration: none;
+    border-style: none;
+}
+.search-button{
+    margin-right: 10px;
+}
+.search{
+    outline: 0;
+    border: 1px solid grey;
+    border-radius: 3px;
+}
