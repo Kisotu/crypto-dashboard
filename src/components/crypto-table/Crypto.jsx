@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 import Axios from "axios";
 import "./Crypto.css";
+import { Link } from "react-router-dom"
 
 function Crypto() {
   const [data, setData] = useState([]);
@@ -34,12 +35,14 @@ function Crypto() {
             <tr>
               <td>
                 <div className="d-flex align-items-center">
-                  <img
-                    src={crypto.image}
-                    alt=""
-                    style={{ width: "45px", height: "45px" }}
-                    className="rounded-circle"
-                  />
+                  <Link to="/chart">
+                    <img
+                      src={crypto.image}
+                      alt=""
+                      style={{ width: "45px", height: "45px" }}
+                      className="rounded-circle"
+                    />
+                  </Link>
                   <div className="ms-3">
                     <p className="fw-bold mb-1">{crypto.name}</p>
                   </div>
@@ -55,7 +58,11 @@ function Crypto() {
               {crypto.price_change_percentage_24h > 0 ? (
                 <td>
                   <span
-                    style={{ backgroundColor: "#76c893", borderRadius: "5px", padding:'6px' }}
+                    style={{
+                      backgroundColor: "#76c893",
+                      borderRadius: "5px",
+                      padding: "6px",
+                    }}
                   >
                     Gain
                   </span>
@@ -63,7 +70,11 @@ function Crypto() {
               ) : (
                 <td>
                   <span
-                    style={{ backgroundColor: "#dc2f02", borderRadius: "5px", padding:'6px' }}
+                    style={{
+                      backgroundColor: "#dc2f02",
+                      borderRadius: "5px",
+                      padding: "6px",
+                    }}
                   >
                     Loss
                   </span>
