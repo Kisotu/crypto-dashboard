@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import Axios from "axios";
-import "./Crypto.css";
-import { Link } from "react-router-dom"
+// import "./Crypto.css";
+import { Link } from "react-router-dom";
 
 function Crypto() {
   const [data, setData] = useState([]);
@@ -14,7 +14,15 @@ function Crypto() {
         setData(res.data);
       })
       .catch((err) => console.log(err));
-  }, [data]);
+  }, []);
+
+  //format currency
+  const formatDollar = (number, maximumSignificantDigits) =>
+    new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "usd",
+      maximumSignificantDigits,
+    }).format(number)
 
   // const url = 'https://api.crypto.com/v2/public/get-instruments';
   return (
@@ -49,12 +57,12 @@ function Crypto() {
                 </div>
               </td>
               <td>
-                <p className="fw-normal mb-1">${crypto.current_price}</p>
+                <p className="fw-normal mb-1">{formatDollar(crypto.current_price, 10)}</p>
               </td>
               <td>
-                <span className="">${crypto.market_cap}</span>
+                <span className="">{formatDollar(crypto.market_cap, 12)}</span>
               </td>
-              <td>${crypto.total_volume}</td>
+              <td>{formatDollar(crypto.total_volume, 12)}</td>
               {crypto.price_change_percentage_24h > 0 ? (
                 <td>
                   <span

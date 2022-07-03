@@ -6,7 +6,7 @@ function Navbar() {
     <div>
       <div className="nav-container">
         <div className="brand-text">
-          <h2>Crypto Dashboard</h2>
+          <h2>Crypto-Dashboard</h2>
         </div>
         <div className="search-box">
           <input type="text" className="search" placeholder="Search" />

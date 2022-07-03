@@ -2,13 +2,7 @@ import React from 'react'
 // import Chart from 'chart.js/auto';
 
 const Charted =()=> {
-    // const chart = new Chart()
-    return(
-        
-        <div>
-
-        </div>
-    )
+    <div>Hello</div>
 }
 
 export default Charted
